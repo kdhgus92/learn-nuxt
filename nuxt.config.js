@@ -1,4 +1,4 @@
-const isProduction = process.env.NODE_ENV === 'production'
+const isProduction = process.env.NODE_ENV === 'production';
 
 export default {
   // Target: https://go.nuxtjs.dev/config-target
@@ -51,4 +51,4 @@ export default {
       ? 'https://my-json-server.typicode.com/joshua1988/nuxt-shopping-api'
       : 'http://localhost:3000',
   },
-}
+};

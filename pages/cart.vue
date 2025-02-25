@@ -1,17 +1,7 @@
 <template>
   <div class="container">
     <h1 class="list-title">담긴 상품 목록</h1>
-    <div class="list-wrapper">
-      <ul>
-        <li v-for="cart in carts" :key="cart.id" class="list-item">
-          <img class="thumbnail" :src="cart.imageUrl" :alt="cart.name" />
-          <div class="description">
-            <p>{{ cart.name }}</p>
-            <span>{{ cart.price }}</span>
-          </div>
-        </li>
-      </ul>
-    </div>
+    <CartList></CartList>
     <div class="extra-panel">
       <button>구매하기</button>
     </div>
@@ -19,17 +9,15 @@
 </template>
 
 <script>
-export default {
-  async asyncData({ store }) {
-    await store.dispatch('fetchCarts')
-  },
+import CartList from '~/components/CartList.vue';
+// import { FETCH_CART_ITEMS } from '@/store';
 
-  computed: {
-    carts() {
-      return this.$store.state.carts
-    },
-  },
-}
+export default {
+  components: { CartList },
+  // async asyncData({ store }) {
+  //   await store.dispatch(FETCH_CART_ITEMS);
+  // },
+};
 </script>
 
 <style scoped>
