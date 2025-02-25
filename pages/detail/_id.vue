@@ -29,12 +29,22 @@ export default {
   },
   head() {
     return {
-      title: `Shopping Item Detail - ${this.product.name}`,
+      title: '상품 상세 페이지',
       meta: [
         {
-          hid: 'description',
-          name: 'description',
-          content: `이 상품은 ${this.product.name}입니다.`,
+          hid: 'og:title',
+          property: 'og:title',
+          content: '상품 상세 페이지',
+        },
+        {
+          hid: 'og:description',
+          property: 'og:description',
+          content: '상품의 상세 정보를 확인해보세요',
+        },
+        {
+          hid: 'og:image',
+          property: 'og:image',
+          content: 'https://picsum.photos/640/480',
         },
       ],
     };
